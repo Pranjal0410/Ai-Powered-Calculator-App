@@ -1,25 +1,25 @@
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
-from constants import SERVER URL, PORT, ENV
+# from contextlib import asynccontextmanager
+# from fastapi import FastAPI
+# from fastapi.middleware.cors import CORSMiddleware
+# import uvicorn
+# from constants import SERVER URL, PORT, ENV
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    yield
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     yield
 
-app = FastAPI(lifespan=lifespan)
+# app = FastAPI(lifespan=lifespan)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
-@app.get("/")
-async def health();
-    return {'message': 'Server is running'}
+# @app.get("/")
+# async def health();
+#     return {'message': 'Server is running'}
 
 
