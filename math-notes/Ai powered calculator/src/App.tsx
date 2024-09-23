@@ -1,25 +1,30 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 
-// ... existing imports ...
-import Home from "./screens";
-import "./index.css";  
+import Home from './screens';
+
+import './index.css'; // Adjust based on your directory structure
+
 const paths = [
-  {
-    path: '/',
-    element: (<Home />),
-  },
+    {
+        path: '/',
+        element: (
+          <Home/>
+        ),
+    },
 ];
 
 const BrowserRouter = createBrowserRouter(paths);
 
 const App = () => {
-  return (
+    const apiUrl = `${import.meta.env.VITE_API_URL}/calculate`;
+    console.log('API URL:', import.meta.env.VITE_API_URL);
+    return (
     <MantineProvider>
-      <RouterProvider router={BrowserRouter} />
+      <RouterProvider router={BrowserRouter}/>
     </MantineProvider>
-  );
+    )
 };
 
 export default App;
